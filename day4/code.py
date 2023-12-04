@@ -7,8 +7,7 @@ for i, s in enumerate(data):
     a, b = s.split(': ')[1].split(' | ')
     a = [int(x) for x in a.split(' ') if x != '']
     b = [int(x) for x in b.split(' ') if x != '']
-    n = len(set(a).intersection(set(b)))
-    card_matches[i+1] = n
+    card_matches[i+1] = len(set(a) & set(b))
 
 print(f'Part 1: {sum([2**(v-1) for v in card_matches.values() if v > 0])}')
        
