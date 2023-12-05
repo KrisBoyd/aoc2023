@@ -46,14 +46,9 @@ for m in range(len(map)):
         seed_end = seed_start + seed_range - 1
         for l in map[m]:
             if l[1] <= seed_end and (l[1] + l[2] - 1) >= seed_start:
-                if l[1] >= seed_start:
-                    right = min(l[1] + l[2] - 1, seed_end)
-                    left = l[1]
-                    new_seeds += [(left + (l[0] - l[1]), right - left + 1)]
-                else:
-                    right = min(l[1] + l[2] - 1, seed_end)
-                    left = seed_start
-                    new_seeds += [(left + (l[0] - l[1]), right - left + 1)]
+                right = min(l[1] + l[2] - 1, seed_end)
+                left = max(l[1], seed_start)
+                new_seeds += [(left + (l[0] - l[1]), right - left + 1)]
      
     seeds = new_seeds
 
