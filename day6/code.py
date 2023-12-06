@@ -1,4 +1,3 @@
-from collections import defaultdict
 data = open("day6/data.txt", "r").read().splitlines()
 
 def ways_to_win(time, distance, res=1):
