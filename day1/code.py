@@ -1,5 +1,4 @@
-data = open("day1/data.txt", "r").read().splitlines()
-print(data)
+data = open(__file__.replace('code.py', 'data.txt'), "r").read().splitlines()
 
 # Part 1
 res = [0] * len(data)

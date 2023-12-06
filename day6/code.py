@@ -1,4 +1,4 @@
-data = open("day6/data.txt", "r").read().splitlines()
+data = open(__file__.replace('code.py', 'data.txt'), "r").read().splitlines()
 
 def ways_to_win(time, distance, res=1):
     for t in range(1, time):
@@ -17,5 +17,4 @@ print(f'Part 1: {res}')
 # Part 2
 time = int(''.join([x for x in data[0] if x.isdigit()]))
 distance = int(''.join([x for x in data[1] if x.isdigit()]))
-
 print(f'Part 2: {ways_to_win(time, distance)}')

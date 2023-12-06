@@ -1,5 +1,5 @@
 from collections import defaultdict
-data = open("day3/data.txt", "r").read().splitlines()
+data = open(__file__.replace('code.py', 'data.txt'), "r").read().splitlines()
 
 def find_neighbours(a, b, data, idx = False):
     range_i = set([max(0, a - 1), a, min(len(data) - 1, a + 1)])

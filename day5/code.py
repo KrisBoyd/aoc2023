@@ -1,5 +1,5 @@
 from collections import defaultdict
-data = open("day5/data.txt", "r").read().splitlines()
+data = open(__file__.replace('code.py', 'data.txt'), "r").read().splitlines()
 data = [s for s in data if s != '']
 seeds = [int(s) for s in data[0].split(': ')[1].split(' ')]
 

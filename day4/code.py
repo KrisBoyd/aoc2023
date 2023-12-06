@@ -1,5 +1,4 @@
-from collections import defaultdict
-data = open("day4/data.txt", "r").read().splitlines()
+data = open(__file__.replace('code.py', 'data.txt'), "r").read().splitlines()
 
 # Part 1
 card_matches = {}
