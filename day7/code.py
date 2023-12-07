@@ -17,28 +17,14 @@ def winnings(cards, part=1):
                         c[k] += add
             
         # Hand score
-        match sorted(c.values()):
-            case [5]:
-                score = 7
-            case [1, 4]:
-                score = 6
-            case [2, 3]:
-                score = 5
-            case [1, 1, 3]:
-                score = 4
-            case [1, 2, 2]:
-                score = 3
-            case [1, 1, 1, 2]:
-                score = 2
-            case [1, 1, 1, 1, 1]:
-                score = 1
+        score = f"{sum([x**2 for x in c.values()]):02d}"
     
         # Rank score
         if part == 1:
             rank = '23456789TJQKA'
         if part == 2:
             rank = 'J23456789TQKA'
-        score = int(str(score) + ''.join([f"{rank.find(x):02d}" for x in card]))
+        score = int(score + ''.join([f"{rank.find(x):02d}" for x in card]))
         cards[i] = tuple(list(cards[i]) + [score])
 
     cards.sort(key=lambda x: x[2])
