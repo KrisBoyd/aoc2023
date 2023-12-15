@@ -24,8 +24,8 @@ for s in data:
         boxes[box][label] = int(s[s.find('=') + 1])
 
 p = 0
-for i, b in enumerate(boxes):
-    for j, s in enumerate(b.values()):
-        p += (i+1) * (j+1) * s
+for i, b in enumerate(boxes, 1):
+    for j, s in enumerate(b.values(), 1):
+        p += i * j * s
 
 print(f'Part 2: {p}')
