@@ -22,8 +22,7 @@ for s in data:
         if label in boxes[box]:
             del boxes[box][label]
     elif operator == '=':
-        focal_length = int(s[s.find('=') + 1])
-        boxes[box][label] = focal_length
+        boxes[box][label] = int(s[s.find('=') + 1])
 
 p = 0
 for i, b in enumerate(boxes):
@@ -31,3 +30,4 @@ for i, b in enumerate(boxes):
         p += (i+1) * (j+1) * s
 
 print(f'Part 2: {p}')
+add
