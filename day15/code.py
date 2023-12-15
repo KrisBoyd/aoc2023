@@ -30,4 +30,3 @@ for i, b in enumerate(boxes):
         p += (i+1) * (j+1) * s
 
 print(f'Part 2: {p}')
-add
