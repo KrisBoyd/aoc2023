@@ -19,8 +19,7 @@ for s in data:
     label = s[:s.find(operator)]
     box = hash(label)
     if operator == '-':
-        if label in boxes[box]:
-            del boxes[box][label]
+        boxes[box].pop(label, None)
     elif operator == '=':
         boxes[box][label] = int(s[s.find('=') + 1])
 
